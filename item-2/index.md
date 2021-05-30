@@ -1,7 +1,7 @@
 # Item 2 - PEP8
 
 ```
-$ python main.py
+$ python3 main.py
 ```
 
 - don't check for empty values using `len(someValue)` - empty values will evaluate to
