@@ -1,3 +1,5 @@
 # Effective Python
 
 Notes and annotations from the book [Effective Python]
+
+- [Item 2 - PEP8](./item-2/index.md)
