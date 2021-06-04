@@ -83,6 +83,7 @@ def bubble_sort(xs: list):
 
     for i in range(1, len(xs)):
         if xs[i] < xs[i - 1]:
+            # swapping values is similar to Javascript
             xs[i - 1], xs[i] = xs[i], xs[i - 1]
 
     print(f"xs after: {xs}")
@@ -116,6 +117,16 @@ def unpacking_in_loops():
     cr()
 
 
+def array_unpacking():
+    div("array_unpacking")
+    xs = list(range(10))
+    first, *rest, last = xs
+    print(f"xs: {xs}")
+    print(f"first: {first}")
+    print(f"rest: {rest}")
+    print(f"last: {last}")
+
+
 if __name__ == "__main__":
     tuple_intro()
     tuple_item_access()
@@ -125,3 +136,4 @@ if __name__ == "__main__":
     swapping_values()
     bubble_sort(["foo", "bar", "baz"])
     unpacking_in_loops()
+    array_unpacking()

@@ -71,3 +71,11 @@ $ python3 main.py
   # 2: b
   # 3: c
   ```
+- Python allows for unpacking using the `*` character in a similar way to
+  Javascript's rest (`...`) operator, except it can be used anywhere in the
+  expression (Javascript only allows _rest_ to be used in the last position):
+
+  ```python
+  xs = list(range(10))
+  first, *middle, last = xs
+  ```
