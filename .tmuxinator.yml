@@ -1,0 +1,8 @@
+name: effective-python
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        -
