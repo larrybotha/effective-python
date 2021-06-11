@@ -1,4 +1,5 @@
 from inspect import stack
+from random import randint
 from typing import Optional
 
 
@@ -40,6 +41,52 @@ def _if_comparative():
     _cr()
 
 
+def _almost_a_switch():
+    _div()
+
+    some_dict = {
+        "a": randint(0, 10),
+        "b": randint(0, 10),
+        "c": randint(0, 10),
+    }
+
+    # Python doesn't have a switch statement, but the walrus operator can be
+    # used to create a similar construct
+    if (x := some_dict.get("a", 0)) >= 5:
+        print(f"using a: {x}")
+    elif (x := some_dict.get("b", 0)) >= 5:
+        print(f"using b: {x}")
+    elif (x := some_dict.get("c", 0)) >= 5:
+        print(f"using c: {x}")
+    else:
+        print("no match!")
+
+    _cr()
+
+
+def _almost_a_do_while():
+    _div()
+
+    def _get_last(ys: list):
+        last = None
+
+        if len(ys) > 0:
+            *_, last = ys
+
+        return last
+
+    xs = list(range(1, 4))
+
+    while last := _get_last(xs):
+        xs = xs[:-1]
+
+        print(f"removed {last}")
+
+    _cr()
+
+
 if __name__ == "__main__":
     _if_simple()
     _if_comparative()
+    _almost_a_switch()
+    _almost_a_do_while()
