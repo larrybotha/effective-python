@@ -2,8 +2,8 @@ SHELL = /bin/sh
 
 .PHONY = all
 
-all: guard-ITEM
-	nodemon -w $(ITEM) -e py --exec "python $(ITEM)"
+all: guard-DIR
+	nodemon -w $(DIR) -e py --exec "python $(DIR)"
 
 guard-%:
 	@if [ -z '${${*}}' ]; then echo "ERROR: variable $* not set" && exit 1; fi
