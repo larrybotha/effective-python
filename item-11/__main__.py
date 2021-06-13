@@ -158,6 +158,15 @@ def _list_reverse_stepped():
     _cr()
 
 
+def _assignment():
+    _div()
+    xs = list(range(10))
+    print(f"\t{'original:':>10} {xs}")
+    xs[2:-2] = [y ** 2 for y in xs[2:-2]]
+    print(f"\t{'assigned:':>10} {xs}")
+    _cr()
+
+
 if __name__ == "__main__":
     _copy()
     _reverse()
@@ -167,3 +176,4 @@ if __name__ == "__main__":
     _list_start_negative()
     _list_stop_negative()
     _list_reverse_stepped()
+    _assignment()
