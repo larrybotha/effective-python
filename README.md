@@ -11,3 +11,4 @@ Notes and annotations from the book [Effective Python]
 - [Item 8 - Use `zip` to process iterators in parallel](./item-08)
 - [Item 9 - Avoid `else` blocks after `for` and `while`](./item-09)
 - [Item 10 - Use assignment expressions](./item-10)
+- [Item 11 - Slicing sequences](./item-11)
