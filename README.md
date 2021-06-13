@@ -12,3 +12,4 @@ Notes and annotations from the book [Effective Python]
 - [Item 9 - Avoid `else` blocks after `for` and `while`](./item-09)
 - [Item 10 - Use assignment expressions](./item-10)
 - [Item 11 - Slicing sequences](./item-11)
+- [Item 12 - Don't mix slicing and stepping](./item-12)
