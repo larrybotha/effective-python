@@ -27,5 +27,20 @@ def _catch_all_unpacking():
     _cr()
 
 
+def _generate_csv_data():
+    yield ("header 1", "header 2", "header 3")
+    yield ("row 1 value 1", "row 1 value 2", "row 1 value 3")
+    yield ("row 2 value 1", "row 2 value 2", "row 2 value 3")
+
+
+def _unpacking_iterators():
+    _div()
+    headers, *rows = _generate_csv_data()
+    print(f'{"headers":>10} {headers}')
+    print(f'{"rows":>10} {rows}')
+    _cr()
+
+
 if __name__ == "__main__":
     _catch_all_unpacking()
+    _unpacking_iterators()
