@@ -167,6 +167,15 @@ def _assignment():
     _cr()
 
 
+def _sorted_for_reversing():
+    _div()
+    xs = list(range(10))
+    print(f"\t{'original:':>10} {xs}")
+    zs = sorted(xs, reverse=True)
+    print(f"\t{'sorted:':>10} {zs}")
+    _cr()
+
+
 if __name__ == "__main__":
     _copy()
     _reverse()
@@ -177,3 +186,4 @@ if __name__ == "__main__":
     _list_stop_negative()
     _list_reverse_stepped()
     _assignment()
+    _sorted_for_reversing()
