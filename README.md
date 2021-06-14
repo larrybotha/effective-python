@@ -13,3 +13,4 @@ Notes and annotations from the book [Effective Python]
 - [Item 10 - Use assignment expressions](./item-10)
 - [Item 11 - Slicing sequences](./item-11)
 - [Item 12 - Don't mix slicing and stepping](./item-12)
+- [Item 13 - Favour catch-all unpacking over slicing](./item-13)
