@@ -1,4 +1,4 @@
-# Item 11 - Don't mix slicing and steps in a single command
+# Item 12 - Don't mix slicing and steps in a single command
 
 ```
 $ python3 ./
