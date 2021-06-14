@@ -19,3 +19,12 @@ $ python3 ./
 
   # => [1,2,'c','d']
   ```
+- `sorted` can be used to return a sorted list without mutating it:
+
+  ```python
+  xs = [1,2,3]
+  zs = sorted(xs, reverse = True)
+  ```
+
+  This can be clearer to read then using negative steps to reverse
+- `sort` will sort in-place - favour `sorted`
