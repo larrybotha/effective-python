@@ -16,3 +16,4 @@ Notes and annotations from the book [Effective Python]
 - [Item 13 - Favour catch-all unpacking over slicing](./item-13)
 - [Item 14 - Sort complex criteria using the `key` parameter](./item-14)
 - [Item 15 - Don't rely on dict insertion order](./item-15)
+- [Item 16 - Prefer `get` over `in` for missing dict values](./item-16)
