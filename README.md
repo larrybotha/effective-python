@@ -1,6 +1,6 @@
 # Effective Python
 
-Notes and annotations from the book [Effective Python]
+Notes and annotations from the book [Effective Python](https://effectivepython.com/)
 
 - [Item 2 - PEP8](./item-02)
 - [Item 3 - `bytes` and `str`](./item-03)
