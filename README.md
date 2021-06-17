@@ -18,3 +18,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 15 - Don't rely on dict insertion order](./item-15)
 - [Item 16 - Prefer `get` over `in` for missing dict values](./item-16)
 - [Item 17 - Prefer `defaultdict` over `dict.setdefault`](./item-17)
+- [Item 18 - Construct key-dependent default values with `__missing__`](./item-18)
