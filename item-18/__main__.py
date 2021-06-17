@@ -44,18 +44,18 @@ def _problematic_read_path_with_setdefault():
     path = "._item-18-file"
 
     try:
-        # setdefault will always evaluate the fallback,
-        # whether the property on is set or not!
-        #
-        # don't use setdefault for things that use expensive operations
-        #
-        # furthermore,
-        # because this is creating a handle to a file,
-        # it'll create
-        # multiple handles, which can create conflicts with existing handles
-        #
-        # it will be difficult to differentiate between exceptions thrown for
-        # `open` vs those raised by `setdefault`
+        """
+        setdefault will always evaluate the fallback, whether the property on
+        is set or not!
+
+        don't use setdefault for things that use expensive operations
+
+        furthermore, because this is creating a handle to a file, it'll create
+        multiple handles, which can create conflicts with existing handles
+
+        it will be difficult to differentiate between exceptions thrown for
+        `open` vs those raised by `setdefault`
+        """
         handle = my_dict.setdefault(path, open(path, "a+b"))
     except OSError:
         print(f"failed to open path: {path}")
