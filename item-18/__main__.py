@@ -19,7 +19,7 @@ def _div(text: Optional[str] = "", print_caller: bool = True):
 def _read_path_with_assignment_expression():
     _div()
     my_dict = {}
-    path = "some_file.txt"
+    path = "._item-18-file"
 
     if (handle := my_dict.get(path)) is None:
         try:
@@ -41,7 +41,7 @@ def _read_path_with_assignment_expression():
 def _problematic_read_path_with_setdefault():
     _div()
     my_dict = {}
-    path = "some_file.txt"
+    path = "._item-18-file"
 
     try:
         # setdefault will always evaluate the fallback,
@@ -88,7 +88,7 @@ def _using___missing___for_default_values():
             return value
 
     my_dict = MyDictWithDefaults()
-    handle = my_dict["foo"]
+    handle = my_dict["._item-18-file"]
     handle.seek(0)
     file_data = handle.read()
     print(f"file_data: ({type(file_data)}) {file_data}")
