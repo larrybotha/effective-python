@@ -47,7 +47,7 @@ $ python3 ./
 - docstrings should contain `Raises` sections describing what a function could
   potentially raise:
 
-  ```pythoon
+  ```python
   def my_div(x: float, y: float) -> float:
       """my_div
       ...
