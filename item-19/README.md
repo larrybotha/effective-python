@@ -1,4 +1,4 @@
-# Item 19 - Item 19 - Unpack a maximum of 3 values when functions return multiple values
+# Item 19 - Unpack a maximum of 3 values when functions return multiple values
 
 ```
 $ python3 ./
