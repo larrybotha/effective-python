@@ -19,7 +19,7 @@ def _div(text: Optional[str] = "", print_caller: bool = True):
 def _read_path_with_assignment_expression():
     _div()
     my_dict = {}
-    path = "some_file.txt"
+    path = "._item-18-file"
 
     if (handle := my_dict.get(path)) is None:
         try:
@@ -41,21 +41,21 @@ def _read_path_with_assignment_expression():
 def _problematic_read_path_with_setdefault():
     _div()
     my_dict = {}
-    path = "some_file.txt"
+    path = "._item-18-file"
 
     try:
-        # setdefault will always evaluate the fallback,
-        # whether the property on is set or not!
-        #
-        # don't use setdefault for things that use expensive operations
-        #
-        # furthermore,
-        # because this is creating a handle to a file,
-        # it'll create
-        # multiple handles, which can create conflicts with existing handles
-        #
-        # it will be difficult to differentiate between exceptions thrown for
-        # `open` vs those raised by `setdefault`
+        """
+        setdefault will always evaluate the fallback, whether the property on
+        is set or not!
+
+        don't use setdefault for things that use expensive operations
+
+        furthermore, because this is creating a handle to a file, it'll create
+        multiple handles, which can create conflicts with existing handles
+
+        it will be difficult to differentiate between exceptions thrown for
+        `open` vs those raised by `setdefault`
+        """
         handle = my_dict.setdefault(path, open(path, "a+b"))
     except OSError:
         print(f"failed to open path: {path}")
@@ -88,7 +88,7 @@ def _using___missing___for_default_values():
             return value
 
     my_dict = MyDictWithDefaults()
-    handle = my_dict["foo"]
+    handle = my_dict["._item-18-file"]
     handle.seek(0)
     file_data = handle.read()
     print(f"file_data: ({type(file_data)}) {file_data}")

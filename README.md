@@ -19,3 +19,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 16 - Prefer `get` over `in` for missing dict values](./item-16)
 - [Item 17 - Prefer `defaultdict` over `dict.setdefault`](./item-17)
 - [Item 18 - Construct key-dependent default values with `__missing__`](./item-18)
+- [Item 19 - Unpack a maximum of 3 values when functions return multiple values](./item-19)
