@@ -62,13 +62,13 @@ $ python3 ./
   method:
 
   ```python
-  class Callable:
+  class MyCallable:
       def __init__(self, name: str):
           self.name = name
 
       def __call__(self):
           print(f"call me {self.name}")
 
-  callable = Callable('Al')
+  callable = MyCallable('Al')
   callable()
   ```
