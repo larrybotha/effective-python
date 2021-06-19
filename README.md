@@ -24,3 +24,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 21 - Closures and variable scope](./item-21)
 - [Item 22 - Variable-positioned arguments](./item-22)
 - [Item 23 - Optional behaviour with keyword arguments](./item-23)
+- [Item 24 - `None` and Docstrings for dynnamic default arguments](./item-24)
