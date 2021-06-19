@@ -23,3 +23,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 20 - Prefer raising exceptions instead of returning `None`](./item-20)
 - [Item 21 - Closures and variable scope](./item-21)
 - [Item 22 - Variable-positioned arguments](./item-22)
+- [Item 23 - Optional behaviour with keyword arguments](./item-23)
