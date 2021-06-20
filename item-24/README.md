@@ -51,3 +51,5 @@ $ python3 ./
   # Hey, Sam, it's flippin' 16:53:03
   # Hey, Sam, it's flippin' 16:53:05
   ```
+- the `Optional` type from `typings` should be used for optional arguments, and
+  dynamic arguments that are defaulted to `None`

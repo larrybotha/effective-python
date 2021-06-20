@@ -130,8 +130,31 @@ def _use_none_and_docstring_for_mutabble_defaults():
     _cr()
 
 
+def _use_type_annotations_indicate_that_arguments_are_optional():
+    _div()
+
+    def fn_with_type_annotations(when: Optional[datetime] = None):
+        """fn_with_type_annotations
+
+        Args:
+          when: time to return. defaults to current time
+
+        :param when:
+          :type when: datetime
+        """
+        if when is None:
+            when = datetime.now()
+        return when
+
+    t1 = fn_with_type_annotations()
+    print(f"t1: {t1} - function uses type annotations with Optional argument")
+
+    _cr()
+
+
 if __name__ == "__main__":
     _dynamic_parameters_are_instantiated_only_once()
     _use_none_and_docstring_for_default_dynamic_values()
     _dont_assign_mutable_values_as_defaults()
     _use_none_and_docstring_for_mutabble_defaults()
+    _use_type_annotations_indicate_that_arguments_are_optional()
