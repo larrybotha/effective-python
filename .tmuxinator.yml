@@ -1,4 +1,4 @@
-name: effective-python
+name: <%= Dir.pwd.split('/')[-1] %>
 
 windows:
   - editor:
