@@ -26,3 +26,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 23 - Optional behaviour with keyword arguments](./item-23)
 - [Item 24 - `None` and Docstrings for dynnamic default arguments](./item-24)
 - [Item 25 - Clarity, keyword-only, and position-only argument](./item-25)
+- [Item 26 - Function decorators with `functools.wraps`](./item-26)
