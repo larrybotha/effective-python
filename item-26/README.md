@@ -38,3 +38,18 @@ $ python3 ./
   ```
   - `wraps` copies all of the metadata from the decorated function to the
     wrapped function
+- `functools` also contains a `partial` function which allows for partial
+  application of functions:
+
+  ```python
+  from functools import partial
+
+  def add(a,b,/):
+    return a + b
+
+  add1 = partial(add, 1)
+
+  add1(4)
+  # 5
+  ```
+
