@@ -29,3 +29,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 26 - Function decorators with `functools.wraps`](./item-26)
 - [Item 27 - Prefer comprehensions over `map` and `filter`](./item-27)
 - [Item 28 - Avoid nesting list comprehensions more than 2 levels](./item-28)
+- [Item 29 - Assignment expressions in comprehensions to avoid repetition](./item-29)
