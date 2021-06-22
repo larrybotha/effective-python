@@ -30,3 +30,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 27 - Prefer comprehensions over `map` and `filter`](./item-27)
 - [Item 28 - Avoid nesting list comprehensions more than 2 levels](./item-28)
 - [Item 29 - Assignment expressions in comprehensions to avoid repetition](./item-29)
+- [Item 30 - Consider using generators instead of returning lists](./item-30)
