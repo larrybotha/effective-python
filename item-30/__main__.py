@@ -1,4 +1,6 @@
+import os
 from inspect import stack
+from io import TextIOWrapper
 from typing import Optional
 
 
@@ -99,7 +101,7 @@ def _loop_over_generator():
 def _generator_raises_stop_iteration():
     _div()
 
-    def my_gen(length: int = 3):
+    def my_gen(length: int = 3, /):
         for i in range(length):
             yield i
 
@@ -112,6 +114,31 @@ def _generator_raises_stop_iteration():
             print("gen is done")
             break
 
+    _cr()
+
+
+def _file_reading_generator():
+    _div()
+
+    def my_file_gen(handle: TextIOWrapper, /):
+        for line in handle:
+            yield line
+
+    path = f"{os.path.dirname(__file__)}/example.txt"
+    file_handle = open(path, "r")
+    file_iter = my_file_gen(file_handle)
+
+    print(f"reading: {path}\n")
+
+    while True:
+        try:
+            print(f"next line: {next(file_iter)}")
+        except StopIteration:
+            print("file has been read")
+            break
+
+    _cr()
+
 
 if __name__ == "__main__":
     _returning_a_list()
@@ -119,3 +146,4 @@ if __name__ == "__main__":
     _loop_over_generator()
     _list_comprehension_over_iterator()
     _generator_raises_stop_iteration()
+    _file_reading_generator()
