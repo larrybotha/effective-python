@@ -24,6 +24,10 @@ $ python3 ./
     return values in arbitrary sequences without consuming the entire sequence
     on initialisation. Generators produce iterators
 
+- use `os.path` to get path information
+  - basename of file: `os.path.basename`
+  - dirname of file: `os.path.dirname`
+
 ## Resources
 
 - [When to use generators in Python][when-to-use-generators]
