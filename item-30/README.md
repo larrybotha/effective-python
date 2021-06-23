@@ -22,7 +22,7 @@ $ python3 ./
   have the `__next__` method in addition to `__iter__`
   - a generator is a function that makes use of a `yield` statement to lazily
     return values in arbitrary sequences without consuming the entire sequence
-    on initialisation
+    on initialisation. Generators produce iterators
 
 ## Resources
 
