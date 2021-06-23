@@ -61,6 +61,61 @@ def _creating_a_generator():
     _cr()
 
 
+def _list_comprehension_over_iterator():
+    _div()
+
+    def get_items_iter(length: int = 5):
+        for i in range(length):
+            print(f"yielding {i}")
+            yield i
+
+    gen = get_items_iter()
+    xs = [x for x in gen]
+
+    print(f"xs: {xs}")
+    _cr()
+
+
+def _loop_over_generator():
+    _div()
+
+    def get_items_iter(length: int = 5):
+        for i in range(length):
+            print(f"yielding {i}")
+            yield i
+
+    # the list is built lazily, despite the generator being instantiated here
+    gen = get_items_iter()
+    xs = []
+
+    for i in gen:
+        print(f"got {i} from gen")
+        xs = xs + [i]
+
+    print(f"xs: {xs}")
+    _cr()
+
+
+def _generator_raises_stop_iteration():
+    _div()
+
+    def my_gen(length: int = 3):
+        for i in range(length):
+            yield i
+
+    gen = my_gen()
+
+    while True:
+        try:
+            print(f"next: {next(gen)}")
+        except StopIteration:
+            print("gen is done")
+            break
+
+
 if __name__ == "__main__":
     _returning_a_list()
     _creating_a_generator()
+    _loop_over_generator()
+    _list_comprehension_over_iterator()
+    _generator_raises_stop_iteration()
