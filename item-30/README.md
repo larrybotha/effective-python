@@ -11,3 +11,12 @@ $ python3 ./
 - generators are functions which contain the `yield` keyword
 - generators don't consume entire lists, and so can be used on streaming data,
   or very large lists, without consuming massive amounts of memory
+
+## Resources
+
+- [When to use generators in Python][when-to-use-generators]
+
+
+[when-to-use-generators]:
+  http://thepythoncorner.com/dev/generators-in-python-should-i-use-them/
+  "When to use generators in Python"
