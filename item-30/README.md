@@ -23,6 +23,14 @@ $ python3 ./
   - a generator is a function that makes use of a `yield` statement to lazily
     return values in arbitrary sequences without consuming the entire sequence
     on initialisation. Generators produce iterators
+- `itertools.islice` can be used as an alternative to the `[::]` slicing
+  syntax (without the reversing feature)
+  - `itertools.islice` can return a slice of an iterator:
+
+    ```python
+    # get the first 10 items of an iterator
+    slice = itertools.islice(some_iterator, 0, 10)
+    ```
 
 - use `os.path` to get path information
   - basename of file: `os.path.basename`
