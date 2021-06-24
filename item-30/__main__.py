@@ -1,3 +1,4 @@
+import itertools
 import os
 from inspect import stack
 from io import TextIOWrapper
@@ -140,6 +141,23 @@ def _file_reading_generator():
     _cr()
 
 
+def _itertools_islice_to_iterate_over_generator():
+    _div()
+
+    def my_gen(handle: TextIOWrapper):
+        for line in handle:
+            yield line
+
+    path = f"{os.path.dirname(__file__)}/example.txt"
+
+    with open(path, "r") as file:
+        iterator = my_gen(file)
+        results = itertools.islice(iterator, 0, 10)
+        print(f"lines: {list(results)}")
+
+    _cr()
+
+
 if __name__ == "__main__":
     _returning_a_list()
     _creating_a_generator()
@@ -147,3 +165,4 @@ if __name__ == "__main__":
     _list_comprehension_over_iterator()
     _generator_raises_stop_iteration()
     _file_reading_generator()
+    _itertools_islice_to_iterate_over_generator()
