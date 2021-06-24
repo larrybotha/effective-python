@@ -138,6 +138,7 @@ def _file_reading_generator():
             print("file has been read")
             break
 
+    file_handle.close()
     _cr()
 
 
@@ -154,6 +155,7 @@ def _itertools_islice_to_iterate_over_generator():
         iterator = my_gen(file)
         results = itertools.islice(iterator, 0, 10)
         print(f"lines: {list(results)}")
+        file.close()
 
     _cr()
 
