@@ -7,3 +7,6 @@ windows:
         - vim
         -
         -
+  - window:
+    panes:
+      -
