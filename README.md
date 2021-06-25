@@ -31,3 +31,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 28 - Avoid nesting list comprehensions more than 2 levels](./item-28)
 - [Item 29 - Assignment expressions in comprehensions to avoid repetition](./item-29)
 - [Item 30 - Consider using generators instead of returning lists](./item-30)
+- [Item 31 - Iterate over arguments defensively](./item-31)
