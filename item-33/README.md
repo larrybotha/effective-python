@@ -57,12 +57,12 @@ $ python3 ./
     def iter_1(times: int):
       message = "iter_1 yielded"
 
-      return [msg for _ in range(times)]
+      return (message for _ in range(times))
 
     def iter_2(times: int):
       message = "iter_2 yielded"
 
-      return [msg for _ in range(times)]
+      return (message for _ in range(times))
 
     def iterate_multiple():
         yield from iter_1(2)
