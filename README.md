@@ -1,4 +1,4 @@
-# Effective Python
+q# Effective Python
 
 Notes and annotations from the book [Effective Python](https://effectivepython.com/)
 
@@ -32,3 +32,5 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 29 - Assignment expressions in comprehensions to avoid repetition](./item-29)
 - [Item 30 - Consider using generators instead of returning lists](./item-30)
 - [Item 31 - Iterate over arguments defensively](./item-31)
+- [Item 32 - Generator expressions for large comprehensions](./item-32)
+- [Item 33 - `yield from` and composing multiple generators](./item-33)
