@@ -34,3 +34,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 31 - Iterate over arguments defensively](./item-31)
 - [Item 32 - Generator expressions for large comprehensions](./item-32)
 - [Item 33 - `yield from` and composing multiple generators](./item-33)
+- [Item 34 - Avoid using generators' `send` method to inject data](./item-34)
