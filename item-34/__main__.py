@@ -34,5 +34,27 @@ def _yield_evaluates_to_none():
             break
 
 
+@_print_fn
+def _yield_can_be_assigned_with_send():
+    def my_gen(length: int):
+        for i in range(length):
+            assigned_yield = yield i
+            print(f"assigned yield: {assigned_yield}")
+
+    it = my_gen(3)
+    output = it.send(None)
+
+    print(f"output: {output}")
+
+    while True:
+        try:
+            output = next(it)
+            output = it.send("foo")
+            print(f"output: {output}")
+        except StopIteration:
+            break
+
+
 if __name__ == "__main__":
     _yield_evaluates_to_none()
+    _yield_can_be_assigned_with_send()
