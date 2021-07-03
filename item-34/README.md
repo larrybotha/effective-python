@@ -39,6 +39,8 @@ $ python3 ./
     # result: None
     ```
 - using `some_iterator.send` values can be assigned to `yield`.
+    - the first value sent to an iterator must be `None`, otherwise a `TypeError`
+        will be thrown
     - `send` will both assign a value to `yield`, and advance the iterator
 
         ```python
@@ -58,24 +60,45 @@ $ python3 ./
             except StopIteration:
                 break
         ```
-    will advance an iterator
-    iteration. Once the value sent via `send` is consumed, yield will return
-    `None` if no other values are sent:
+    - the value passed at the time of calling `send` will persist for only that
+        iteration - any subsequent `next` calls will have `yield` evaluate to
+        the default `None`
+- using `send` is not particularly intuitive:
+    - it's not easy to read
+    - the first yielded value of your iterator will be `None`, possibly making
+        the types of the yielded values inconsistent
+    - it requires that the first value be `None`, which makes the iterables used
+        for the send values contain inconsistent types
+- the complexity of `send` can be avoided by instead passing an iterator into the
+    iterable:
 
     ```python
-    def my_gen(length: int):
-        for i in range(length):
-            assigned_yield = yield i
-            print(f'sent value: {assigned_yield}')
+    def my_gen(xs: List[int], iterator: Iterator[int]):
+        for x in xs:
+            yield x * next(iterator)
 
-    it = my_gen(3)
+    # [1,2,3]
+    xs = [x for (x, _) in enumerate(range(3), 1)]
+    # gen(10, 20, 30)
+    scalar_iterator = (x * 10 for (x, _) in enumerate(range(3), 1))
+    it = my_gen(xs, scalar_iterator)
 
-    # before anything is yielded, only None may be sent
-    it.send(None)
+    for x in it:
+        print(x)
 
-    print(f'next: {next(it)}')
-    it.send('foo')
+    # 10
+    # 40
+    # 90
 
-    print(f'next: {next(it)}')
-    print(f'next: {next(it)}')
+    # or converting a list to an iterator
+    scalars = [x * 10 for (x, _) in enumerate(range(3), 1)]
+    it = my_gen(xs, iter(scalars))
+
+    for x in it:
+        print(x)
+
+    # 10
+    # 40
+    # 90
+
     ```
