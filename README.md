@@ -37,3 +37,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 34 - Avoid using generators' `send` method to inject data](./item-34)
 - [Item 35 - Avoid using `throw` for state transitions in generators](./item-35)
 - [Item 36 - `itertools` and working with iterators and generators](./item-36)
+- [Item 37 - Favour composing classes instead of nested built-in types](./item-37)
