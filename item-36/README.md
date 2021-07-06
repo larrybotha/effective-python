@@ -36,7 +36,7 @@ $ python3 ./
         const x2 = from([4,5,6])
         const xs = concat(x1, x2))
 
-        # -1--2--3--4--5--6--|
+        // -1--2--3--4--5--6--|
         ```
     - `chain.from_iterable`, which behaves like `flatten` in Javascript:
 
