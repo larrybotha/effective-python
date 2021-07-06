@@ -36,3 +36,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 33 - `yield from` and composing multiple generators](./item-33)
 - [Item 34 - Avoid using generators' `send` method to inject data](./item-34)
 - [Item 35 - Avoid using `throw` for state transitions in generators](./item-35)
+- [Item 36 - `itertools` and working with iterators and generators](./item-36)
