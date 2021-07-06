@@ -38,26 +38,32 @@ $ python3 ./
 
         # -1--2--3--4--5--6--|
         ```
-        - see also `chain.from_iterable`, which accepts a single  iterable of
-        iterables to yield an iterator:
+    - `chain.from_iterable`, which behaves like `flatten` in Javascript:
 
-            ```python
-            from itertools import chain
+        ```python
+        from itertools import chain
 
-            xxs = [[1,2,3], [4,5,6]]
-            iter = chain.from_iterable(xxs)
+        xxs = [[1,2,3], [4,5,6]]
+        iter = chain.from_iterable(xxs)
 
-            for x in iter:
-                print(x)
+        for x in iter:
+            print(x)
 
-            # 1, 2, 3, 4, ...
-            ```
+        # 1, 2, 3, 4, ...
+        ```
     - `tee` - create `n` multiple independent iterators from a single iterator
     - `dropwhile` - drops values from an iterator until a condition is met
     - `takewhile` - takes values from an iterator until a condition is met
     - `filterfalse` - inverse of the built-in `filter`
     - `accumulate` - similar to `RxJs`s `scan`, emitting a value on each
         iteration of the accumulating function
+    - `starmap` - apply a function to an iterable
+    - `compress` - apply a boolean-like iterator to each value of a source iterator
+        to filter it
     - `product` - generate a cartesian product from iterables
     - `permutations` - generates permutations of iterables
     - `combinations` - generates combinations of iterables
+- `itertools` splits its tools into 3 main categories:
+    - infinite iterators
+    - iterators that operate on iterables
+    - iterators that produce combinations of iterables

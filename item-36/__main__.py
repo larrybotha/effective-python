@@ -2,10 +2,13 @@ from functools import wraps
 from itertools import (
     accumulate,
     chain,
+    compress,
     count,
     cycle,
     dropwhile,
+    filterfalse,
     repeat,
+    starmap,
     takewhile,
     tee,
     zip_longest,
@@ -174,6 +177,53 @@ def _accummulate():
         print(x)
 
 
+@_print_fn
+def _starmap():
+    xs = [(2, 0), (3, 1), (4, 2)]
+
+    print(f"xs: {xs}\n")
+
+    my_pow = lambda base, exp: base ** exp
+    starmapper = starmap(my_pow, xs)
+
+    for x in starmapper:
+        print(x)
+
+
+@_print_fn
+def _compress():
+    ord_a = ord("a")
+    xs = [chr(x + ord_a) for x in range(10)]
+    """
+    could be:
+        bools = [False, True]
+        bools = ["", "foo"]
+    """
+    bools = [0, 1]
+
+    print(f"xs: {xs}")
+    print(f"bools: {bools}\n")
+
+    bool_iter = cycle(bools)
+    compress_iter = compress(xs, bool_iter)
+
+    for x in compress_iter:
+        print(x)
+
+
+@_print_fn
+def _filterfalse():
+    xs = list(chain.from_iterable(repeat([0, 1], 3)))
+
+    print(f"xs: {xs}\n")
+
+    equals_0 = lambda x: x == 0
+    filterfalse_iter = filterfalse(equals_0, xs)
+
+    for x in filterfalse_iter:
+        print(x)
+
+
 if __name__ == "__main__":
     _count()
     _cycle()
@@ -185,3 +235,6 @@ if __name__ == "__main__":
     _dropwhile()
     _takewhile()
     _accummulate()
+    _starmap()
+    _compress()
+    _filterfalse()
