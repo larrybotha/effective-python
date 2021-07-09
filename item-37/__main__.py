@@ -2,6 +2,7 @@ import random
 from collections import defaultdict, namedtuple
 from functools import wraps
 from itertools import repeat
+from typing import List
 
 
 def _print_fn(fn):
@@ -92,8 +93,67 @@ def _complex_nested_dicts():
 
 
 @_print_fn
-def _named_tuple():
-    """this namedtuple could be mistaken for a class"""
+def _rewriting_complex_nested_dict_with_class_composition():
+    Grade = namedtuple("Grade", ["score", "weight"])
+
+    class Subject:
+        def __init__(self):
+            self._grades: List[Grade] = []
+
+        def add_grade(self, grade: Grade, /):
+            self._grades = self._grades + [grade]
+
+        def get_average(self) -> float:
+            total = sum([(score * weight) for (score, weight) in self._grades])
+
+            return total / len(self._grades)
+
+    class Student:
+        def __init__(self):
+            self._subjects = defaultdict(Subject)
+
+        def get_subject(self, name: str, /):
+            return self._subjects[name]
+
+        def get_average(self):
+            subjects = [self._subjects[key] for key in self._subjects.keys()]
+            averages = [subject.get_average() for subject in subjects]
+            total = sum(averages)
+
+            return total / len(self._subjects)
+
+    class GradeBook:
+        def __init__(self):
+            self._students = defaultdict(Student)
+
+        def get_student(self, name: str):
+            return self._students[name]
+
+    grade_book = GradeBook()
+    sam = grade_book.get_student("Sam")
+    math = sam.get_subject("math")
+    grades = [
+        Grade(random.randint(0, 100), random.randint(0, 100) / 100) for _ in range(3)
+    ]
+
+    print(f"grades: {grades}")
+
+    for grade in grades:
+        math.add_grade(grade)
+
+    print(f"Sam's average: {sam.get_average()}")
+
+
+@_print_fn
+def _namedtuple_is_like_class_shorthand():
+    """
+    using namedtuple here is like instantiating a class without the boilerpalte
+
+    If exposed to other users, they may end up using internals of a namedtuple that
+    are specific to a named tuple. If you need to change your implementation from
+    a namedtuple to a class, you may break integrations - consider a class if the
+    value is going to be available publicly
+    """
     MyTuple = namedtuple("MyTuple", ["value_a", "value_b"])
     a = MyTuple(1, 2)
 
@@ -104,4 +164,5 @@ def _named_tuple():
 
 if __name__ == "__main__":
     _complex_nested_dicts()
-    _named_tuple()
+    _rewriting_complex_nested_dict_with_class_composition()
+    _namedtuple_is_like_class_shorthand()
