@@ -38,3 +38,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 35 - Avoid using `throw` for state transitions in generators](./item-35)
 - [Item 36 - `itertools` and working with iterators and generators](./item-36)
 - [Item 37 - Favour composing classes instead of nested built-in types](./item-37)
+- [Item 38 - Accept functions instead of classes for simple interfaces](./item-38)
