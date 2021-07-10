@@ -39,3 +39,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 36 - `itertools` and working with iterators and generators](./item-36)
 - [Item 37 - Favour composing classes instead of nested built-in types](./item-37)
 - [Item 38 - Accept functions instead of classes for simple interfaces](./item-38)
+- [Item 39 - Constructing objects generically using `@classmethod` polymorphism](./item-39)
