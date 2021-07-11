@@ -1,4 +1,4 @@
-q# Effective Python
+# Effective Python
 
 Notes and annotations from the book [Effective Python](https://effectivepython.com/)
 
