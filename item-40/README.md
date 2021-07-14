@@ -18,4 +18,5 @@ $ python3 ./
     class Multiple(One, Two):
         pass
     ```
--
+- diamon inheritance is when a multiple inheritance results in a subclass
+    inheriting from 2 or more classes that share a parent
