@@ -79,6 +79,33 @@ def _diamond_inheritance_with_old_initialization():
     print(f"got times_then_add: {times_then_add.value}")
 
 
+@_print_fn
+def _diamond_inheritance_with_super():
+    class BaseClass:
+        def __init__(self, value):
+            self.value = value
+
+    class AddTwo(BaseClass):
+        def __init__(self, value):
+            super().__init__(value)
+            self.value += 2
+
+    class TimesTwo(BaseClass):
+        def __init__(self, value):
+            super().__init__(value)
+            self.value *= 2
+
+    class TimesThenAdd(TimesTwo, AddTwo):
+        def __init__(self, value):
+            super().__init(value)
+
+    times_then_add = TimesThenAdd(5)
+
+    print(f"should be: 5 * 2 + 2 = 12")
+    print(f"got times_then_add: {times_then_add.value}")
+
+
 if __name__ == "__main__":
     _multiple_inheritance_initialization_order()
     _diamond_inheritance_with_old_initialization()
+    _diamond_inheritance_with_super()
