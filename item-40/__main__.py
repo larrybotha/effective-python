@@ -80,7 +80,7 @@ def _diamond_inheritance_with_old_initialization():
 
 
 @_print_fn
-def _diamond_inheritance_with_super():
+def _diamond_inheritance_with_super_invalid_order():
     class BaseClass:
         def __init__(self, value):
             self.value = value
@@ -95,17 +95,55 @@ def _diamond_inheritance_with_super():
             super().__init__(value)
             self.value *= 2
 
+    # this order is invalid as a result of MRO - method resolution order
     class TimesThenAdd(TimesTwo, AddTwo):
         def __init__(self, value):
-            super().__init(value)
+            super().__init__(value)
 
     times_then_add = TimesThenAdd(5)
 
     print(f"should be: 5 * 2 + 2 = 12")
     print(f"got times_then_add: {times_then_add.value}")
 
+    print("\ninvalid order because of the MRO:")
+
+    mro_string = "\n".join(repr(cls) for cls in TimesThenAdd.mro())
+    print(mro_string)
+
+
+@_print_fn
+def _diamond_inheritance_with_super_valid_order():
+    class BaseClass:
+        def __init__(self, value):
+            self.value = value
+
+    class AddTwo(BaseClass):
+        def __init__(self, value):
+            super().__init__(value)
+            self.value += 2
+
+    class TimesTwo(BaseClass):
+        def __init__(self, value):
+            super().__init__(value)
+            self.value *= 2
+
+    class TimesThenAdd(AddTwo, TimesTwo):
+        def __init__(self, value):
+            super().__init__(value)
+
+    times_then_add = TimesThenAdd(5)
+
+    print(f"should be: 5 * 2 + 2 = 12")
+    print(f"got times_then_add: {times_then_add.value}")
+
+    print("\nvalid order because of the MRO:")
+
+    mro_string = "\n".join(repr(cls) for cls in TimesThenAdd.mro())
+    print(mro_string)
+
 
 if __name__ == "__main__":
     _multiple_inheritance_initialization_order()
     _diamond_inheritance_with_old_initialization()
-    _diamond_inheritance_with_super()
+    _diamond_inheritance_with_super_invalid_order()
+    _diamond_inheritance_with_super_valid_order()
