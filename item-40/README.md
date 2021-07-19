@@ -52,19 +52,40 @@ $ python3 ./
     class BaseClass:
         def __init__(self, value):
             self.value = value
+            print(f"BaseClass.__init__ called")
 
     class LeftClass(BaseClass):
         def __init__(self, value):
+            super().__init__(value)
             self.left = value
+            print(f"LeftClass.__init__ called")
 
     class RightClass(BaseClass):
-        def __init__(self, value);
+        def __init__(self, value):
+            super().__init__(value)
             self.right = value
+            print(f"RightClass.__init__ called")
 
     class Both(LeftClass, RightClass):
         def __init__(self, value):
             super().__init__(value)
+            print(f"Both.__init__ called")
 
     mro_string = "\n".join(repr(cls) for cls in Both.mro())
     print(mro_string)
+    # <class '__main__.Both'>
+    # <class '__main__.LeftClass'>
+    # <class '__main__.RightClass'>
+    # <class '__main__.BaseClass'>
+    # <class 'object'>
+
+    Both(5)
+    # BaseClass.__init__ called
+    # RightClass.__init__ called
+    # LeftClass.__init__ called
+    # Both.__init__ called
     ```
+
+    - the MRO output shows that the initialization functions are evaluated in the
+        following order: `Both`, `LeftClass`, `RightClass`, `BaseClass`. They
+        are then called in the reverse order
