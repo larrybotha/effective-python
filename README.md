@@ -42,3 +42,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 39 - Constructing objects generically using `@classmethod` polymorphism](./item-39)
 - [Item 40 - `super` for initialising parent classes](./item-40)
 - [Item 41 - Composing functionality using mix-ins](./item-41)
+- [Item 42 - prefer public attributes over private attributes](./item-42)
