@@ -41,3 +41,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 38 - Accept functions instead of classes for simple interfaces](./item-38)
 - [Item 39 - Constructing objects generically using `@classmethod` polymorphism](./item-39)
 - [Item 40 - `super` for initialising parent classes](./item-40)
+- [Item 41 - Composing functionality using mix-ins](./item-41)
