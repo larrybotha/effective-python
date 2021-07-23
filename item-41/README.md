@@ -4,7 +4,7 @@
 $ python3 ./
 ```
 
-- mix-ins are a mechanism that allows one to avoid multiple inheritance.
+- mix-ins are a mechanism that allow one to avoid multiple inheritance.
     Multiple inheritance should be avoided - **favour composition over
     inheritance**
 - mix-ins are classes that provide a small set of methods, don't have instance
