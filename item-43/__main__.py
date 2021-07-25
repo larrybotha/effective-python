@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from collections.abc import Sequence
 from functools import wraps
 from itertools import repeat
@@ -102,6 +103,37 @@ def _manually_implementing_container_is_error_prone():
 
 
 @_print_fn
+def _create_abstract_class():
+    class AbstractClass(ABC):
+        @abstractmethod
+        def method(self):
+            pass
+
+    class ConcreteClassPartial(AbstractClass):
+        pass
+
+    class ConcreteClassFull(AbstractClass):
+        def method(self):
+            print("method implemented!")
+
+    try:
+        print("attempt to instantiate partially implemented abstract interface...")
+        ConcreteClassPartial()
+    except TypeError as error:
+        print(f"Error: {error}\n")
+    else:
+        print("instantiated!")
+
+    try:
+        print("attempt to instantiate fully implemented abstract interface...")
+        ConcreteClassFull()
+    except TypeError as error:
+        print(f"Error: {error}\n")
+    else:
+        print("instantiated!")
+
+
+@_print_fn
 def _astract_class_will_throw_if_not_implemented():
     class BadImplementation(Sequence):
         pass
@@ -150,5 +182,6 @@ def _use_collections_abc_abstract_classes_to_implement_containers():
 if __name__ == "__main__":
     _subclassing_extends_containers()
     _manually_implementing_container_is_error_prone()
+    _create_abstract_class()
     _astract_class_will_throw_if_not_implemented()
     _use_collections_abc_abstract_classes_to_implement_containers()

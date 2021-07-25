@@ -45,3 +45,28 @@ $ python3 ./
 - to avoid having to remember what to implement, Python's `collections.abc`
     module provides abstract classes allowing one to correctly implement a
     container
+    - many of the abstract classes implement functionality for free when the
+        minimum requirements of the abstract class are met. e.g. implementing
+        `__getitem__` and `__len__` for `Sequence` allows one to use `count` and
+        `index` on instances
+- creating a class that inherits from an abstract class without implementing the
+    required methods will throw if an instance is initialised from that class:
+
+    ```python
+    from abc import ABS, abstractmethod
+
+    class MyAbstractInterface(ABC):
+        def some_method(self):
+            pass
+
+    class ConcreteClass(MyAbstractInterface):
+        pass
+
+    try:
+        ConcreteClass()
+    except TypeError:
+        print('throws')
+
+    # throws
+    ```
+- for simple use-cases, inherit from `list`, `dict`, `tuple` etc
