@@ -88,3 +88,30 @@ $ python3 ./
 
     IntValidator(.5) # also invalid
     ```
+- `@property` can be used to make a parent class's attributes immutable:
+
+    ```python
+    class Value:
+        def __init__(self, value):
+            self.value = value
+
+    class ImmutableValue(Value):
+        @property
+        def value(self):
+            return self._value
+
+        @value.setter
+        def value(self, value):
+            # self._value can only be set once during initialisation, otherwise
+            # attempts to mutate value raise an error
+            if hasattr(self, '_value'):
+                raise AttributeError('value is immutable')
+
+            self._value = value
+    ```
+- `AttributeError` is / should be raised when accessing or assigning an
+    attribute fails
+
+    - see
+        [https://docs.python.org/3.9/library/exceptions.html#bltin-exceptions](https://docs.python.org/3.9/library/exceptions.html#bltin-exceptions)
+        for all built-in exceptions
