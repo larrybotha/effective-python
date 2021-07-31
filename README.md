@@ -44,3 +44,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 41 - Composing functionality using mix-ins](./item-41)
 - [Item 42 - prefer public attributes over private attributes](./item-42)
 - [Item 43 - Inheriting from `collections.abc` for custom container types](./item-43)
+- [Item 44 - Plain attributes over getters and setters](./item-44)
