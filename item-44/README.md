@@ -115,3 +115,7 @@ $ python3 ./
     - see
         [https://docs.python.org/3.9/library/exceptions.html#bltin-exceptions](https://docs.python.org/3.9/library/exceptions.html#bltin-exceptions)
         for all built-in exceptions
+- the `setter` associated with `@property` should be fast - do not use it to
+    perform expensive IO - users will expect it to behave in the same way as
+    directly setting any other attribute. If there is any expensive processing
+    required to set a value, provide methods or functions to do so
