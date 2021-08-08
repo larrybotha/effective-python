@@ -46,3 +46,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 43 - Inheriting from `collections.abc` for custom container types](./item-43)
 - [Item 44 - Plain attributes over getters and setters](./item-44)
 - [Item 45 - Use `@property` to add behaviour to attributes without breaking changes](./item-45)
+- [Item 46 - Descriptors for reusable `@property` methods](./item-46)
