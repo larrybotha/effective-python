@@ -7,7 +7,7 @@ $ python3 ./
 - `@property` is good for defining getters and setters for a single property
     with validation
 - `@property` is not so good for multiple properties that should behave in the
-    same manner - i.e. reusing logic `@property` is not possible - the same
+    same manner - i.e. reusing logic in `@property` is not possible - the same
     logic must be defined repeatedly
 - using a descriptor class to define shared behaviour of properties within a
     class can be superior
@@ -142,3 +142,9 @@ $ python3 ./
         elsewhere, the value in the `WeakKeyDictionary` will be garbage
         collected, as opposed to if we used a `dict` or something that would
         hold a strong reference to the value
+- use descriptors instead of `@property` for reusable validation or logic
+- use `WeakKeyDictionary` to store references to instances because:
+    - descriptors must be defined as class attributes, and thus values stored on
+        the descriptor itself will be common to all instances
+    - `WeakKeyDictionary` holds weak references to objects, ensuring that one
+        doesn't introduce memory leaks when instances are removed
