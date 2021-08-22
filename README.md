@@ -47,3 +47,4 @@ Notes and annotations from the book [Effective Python](https://effectivepython.c
 - [Item 44 - Plain attributes over getters and setters](./item-44)
 - [Item 45 - Use `@property` to add behaviour to attributes without breaking changes](./item-45)
 - [Item 46 - Descriptors for reusable `@property` methods](./item-46)
+- [Item 47 - Lazy attributes with `__getattr__`, `__setattr__`, and `__getattribute__`](./item-47)
