@@ -53,7 +53,7 @@ $ python3 ./
     required methods will throw if an instance is initialised from that class:
 
     ```python
-    from abc import ABS, abstractmethod
+    from abc import ABC, abstractmethod
 
     class MyAbstractInterface(ABC):
         def some_method(self):
