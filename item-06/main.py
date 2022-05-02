@@ -81,10 +81,11 @@ def bubble_sort(xs: list):
     div("bubble_sort")
     print(f"xs before: {xs}")
 
-    for i in range(1, len(xs)):
-        if xs[i] < xs[i - 1]:
-            # swapping values is similar to Javascript
-            xs[i - 1], xs[i] = xs[i], xs[i - 1]
+    for _ in range(len(xs)):
+        for i in range(1, len(xs)):
+            if xs[i] < xs[i - 1]:
+                # swapping values is similar to Javascript
+                xs[i - 1], xs[i] = xs[i], xs[i - 1]
 
     print(f"xs after: {xs}")
     cr()
