@@ -13,6 +13,7 @@ $ python3 main.py
   print(some_dict.items())
   # dict_items([('a', 1), ('b', 2)])
   ```
+
 - items in a tuple are accessed using indexes in the same way that items in
   arrays are accessed
 - items in a tuple may not be reassigned:
@@ -22,6 +23,7 @@ $ python3 main.py
   my_tuple[0] = 4
   # throws TypeError
   ```
+
 - items can be unpacked from tuples:
 
   ```python
@@ -31,6 +33,7 @@ $ python3 main.py
   d = {'foo': ('bar', 1)}
   ((name, (key, val))) = d.items()
   ```
+
 - unpacking can be used to swap values:
 
   ```python
@@ -39,9 +42,12 @@ $ python3 main.py
 
   # or generally
   xs = list(range(10))
-  for i in xs:
+
+  for i range(1, len(xs)):
+    xs[i - 1], xs[i] = xs[i], xs[i - 1]
 
   ```
+
 - unpacking can be useful in loops:
 
   ```python
@@ -57,6 +63,7 @@ $ python3 main.py
   for x, y in l:
     print(f'{x} => {y}')
   ```
+
 - `enumerate`'s 2nd value accepts a starting index, which only affects the value
   of the index in a loop, and not the index of the array being operated on:
 
@@ -71,6 +78,7 @@ $ python3 main.py
   # 2: b
   # 3: c
   ```
+
 - Python allows for unpacking using the `*` character in a similar way to
   Javascript's rest (`...`) operator, except it can be used anywhere in the
   expression (Javascript only allows _rest_ to be used in the last position):
